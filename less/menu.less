@@ -1,3 +1,4 @@
+@import 'helpers.less';
 @lucida: "Lucida Sans Unicode";
 @bg-grey: #FAFAFA;
 @copy-grey: #323232;
@@ -15,6 +16,7 @@ a {
     color: @copy-grey;
     text-decoration: None;
     text-transform: uppercase;
+    border-bottom: 1px solid @bg-grey;
     &:hover, &.active {
         color: @header-blue;
         border-bottom: 1px solid @header-blue !important;
@@ -32,8 +34,37 @@ h3 {
 
 }
 
+
+//Normal and wide screens
+.main-menu {
+    .clearfix();
+    padding: 0 0 0 20%;
+    margin-left: -50px;
+    ul {
+        padding: 0;
+    }
+}
+
+
+//Main blocks
+.main-menu > ul > li {
+    float: left;
+    padding: 0 5% 0 0;
+}
+
+//sub-nav rows
+.sub-nav > li {
+    padding-bottom: 7px;
+}
+
+.sub-nav a{
+    padding-bottom: 3px;
+}
+
+//Collapsed style
 @media (max-width:@menu-collapse-width) {
     .main-menu {
+        margin-left: 0;
         padding: 0 40px;
         ul {
             padding: 0;
@@ -44,6 +75,10 @@ h3 {
         a {
             padding-bottom: 5px;
         }
+    }
+//Main blocks
+    .main-menu > ul > li {
+        float: none;
     }
 
     .sub-nav a {
@@ -58,19 +93,3 @@ h3 {
 
     }
 }
-
-//Normal and wide screens
-.main-menu {
-    .clearfix;
-    padding: 0 40px ;
-    ul {
-        padding: 0;
-    }
-}
-
-
-//Main blocks
-.main-menu > ul > li {
-    float: left;
-}
-
