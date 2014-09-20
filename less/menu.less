@@ -2,20 +2,12 @@
 @bg-grey: #FAFAFA;
 @copy-grey: #323232;
 @header-blue: #2F476C;
+@menu-collapse-width: 750px;
 
+// Common style definitions
 .main-menu {
     background: @bg-grey;
     font: 11px @lucida;
-    padding: 0 40px;
-    ul {
-        padding: 0;
-    }
-    li {
-        padding-bottom: 11px;
-    }
-    a {
-        padding-bottom: 5px;
-    }
 }
 
 a {
@@ -31,7 +23,6 @@ a {
 
 .sub-nav a {
     font-size: 11px;
-    border-bottom: 1px dotted @copy-grey;
 }
 
 h3 {
@@ -39,9 +30,47 @@ h3 {
     font-size: 18px;
     font-weight: normal;
 
-    a {
-        border-bottom: 1px solid @bg-grey;
+}
+
+@media (max-width:@menu-collapse-width) {
+    .main-menu {
+        padding: 0 40px;
+        ul {
+            padding: 0;
+        }
+        li {
+            padding-bottom: 11px;
+        }
+        a {
+            padding-bottom: 5px;
+        }
     }
 
+    .sub-nav a {
+        border-bottom: 1px dotted @copy-grey;
+    }
+
+    h3 {
+
+        a {
+            border-bottom: 1px solid @bg-grey;
+        }
+
+    }
+}
+
+//Normal and wide screens
+.main-menu {
+    .clearfix;
+    padding: 0 40px ;
+    ul {
+        padding: 0;
+    }
+}
+
+
+//Main blocks
+.main-menu > ul > li {
+    float: left;
 }
 
